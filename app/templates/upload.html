@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Highlight Clipper</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #1f2937;
+    }
+
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    input[type="url"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+    }
+
+    input[type="submit"] {
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #4338ca;
+    }
+  </style>
+</head>
+<body>
+  <h1>AI Highlight Clipper</h1>
+  <p>Paste a YouTube link and we'll extract the highlights.</p>
+
+  <form action="/api/highlights/youtube" method="post">
+    <label for="youtube_url">YouTube Video URL:</label><br />
+    <input type="url" id="youtube_url" name="youtube_url" placeholder="https://www.youtube.com/watch?v=..." required />
+    <input type="submit" value="Clip Highlights" />
+  </form>
+</body>
+</html>
